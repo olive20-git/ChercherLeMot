@@ -21,6 +21,7 @@ namespace ChercherLeMot
 
             Console.WriteLine("Entrez les mots melangés  en separant chacun par une virgule \n\n");
             string motMelanger=Console.ReadLine();
+            Console.WriteLine("\n");
             // recuperer les entrées et les stockees dans une liste  de chaines de caracteres avec comme delimitateur ","
             IList<string> motsMelanges = motMelanger.Trim().Split(',');
 
@@ -37,7 +38,7 @@ namespace ChercherLeMot
                     string motDicTri = new string(motDuDictionnaire.ToCharArray().OrderBy(c => c).ToArray());
                     if (motMelangerTrier.Equals(motDicTri))
                     {
-                        Console.WriteLine($"{mot} : correspond à {motDuDictionnaire}");
+                        Console.WriteLine($"{mot} : correspond à {motDuDictionnaire}\n");
                         correspondanceTrouvee= true;
                         break;
                     }
@@ -45,7 +46,7 @@ namespace ChercherLeMot
                     
                 }
                 if (!correspondanceTrouvee) {
-                    Console.WriteLine($"{mot} : Aucune correspondance trouvée.");
+                    Console.WriteLine($"{mot} : Aucune correspondance trouvée.\n");
                 }
 
             }
